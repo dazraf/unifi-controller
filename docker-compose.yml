@@ -33,7 +33,7 @@ services:
       - 5514:5514/udp #optional
     restart: unless-stopped
   unifi-db:
-    image: mongo:4.4
+    image: mongo:bionic
     volumes:
       - ./data/db:/data/db
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro

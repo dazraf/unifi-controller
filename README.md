@@ -1,5 +1,7 @@
 # Unifi Controller Deployment for Docker Compose
 
+This project provides an easy means of setting up the Ubiquiti Unifi Controller stack on a Raspberry PI.
+
 ## Starting
 
 Execute the following in this project's directory to start the controller, mongodb and the mongo-express admin console:
