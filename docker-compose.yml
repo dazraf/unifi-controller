@@ -45,7 +45,11 @@ services:
       MONGO_DBNAME: unifi
       MONGO_AUTHSOURCE: admin
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      test: ["CMD", "mongo", "--quiet", "127.0.0.1/test", "--eval", "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
     restart: unless-stopped
   mongo-express:
     image: mongo-express:1.0.2
